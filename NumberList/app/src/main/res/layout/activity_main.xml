@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etN"
+        android:hint="Nhập số nguyên N"
+        android:inputType="number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridRadio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/etN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbOdd"
+            android:text="Số lẻ" />
+
+        <RadioButton
+            android:id="@+id/rbPrime"
+            android:text="Số nguyên tố" />
+
+        <RadioButton
+            android:id="@+id/rbPerfect"
+            android:text="Số hoàn hảo" />
+
+        <RadioButton
+            android:id="@+id/rbEven"
+            android:text="Số chẵn" />
+
+        <RadioButton
+            android:id="@+id/rbSquare"
+            android:text="Số chính phương" />
+
+        <RadioButton
+            android:id="@+id/rbFibo"
+            android:text="Số Fibonacci" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:text="Không có số nào thỏa mãn"
+        android:textStyle="italic"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/gridRadio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ListView
+        android:id="@+id/lvNumbers"
+        android:dividerHeight="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/gridRadio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
