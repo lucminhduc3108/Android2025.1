@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- ===== VÙNG HIỂN THỊ KẾT QUẢ ===== -->
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:gravity="end|bottom"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintBottom_toTopOf="@id/keyboardArea" />
+
+    <!-- ===== KHU VỰC BÀN PHÍM ===== -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keyboardArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@id/tvDisplay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 4 CỘT -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gc0"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gc1"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gc2"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gc3"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gc4"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+
+        <!-- 5 HÀNG (6 đường ngang) -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr0"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr1"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.20" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr2"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr3"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr4"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gr5"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1.0" />
+
+        <!-- ===== STYLE BUTTON DÙNG TRỰC TIẾP ===== -->
+        <!-- (dùng <shape> inline, không cần file riêng) -->
+        <style name="CalcButtonStyle">
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">0dp</item>
+            <item name="android:textColor">#000000</item>
+            <item name="android:background">@drawable/btn_calc</item>
+        </style>
+
+        <!-- Vì không thể khai báo drawable trong style inline, ta fake màu xám + viền trắng bằng backgroundTint -->
+        <!-- Tất cả button dưới đều có cùng kiểu -->
+
+        <!-- ===== HÀNG 1 ===== -->
+        <Button
+            android:text="CE"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc0"
+            app:layout_constraintEnd_toStartOf="@id/gc1"
+            app:layout_constraintTop_toTopOf="@id/gr0"
+            app:layout_constraintBottom_toTopOf="@id/gr1" />
+
+        <Button
+            android:text="C"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc1"
+            app:layout_constraintEnd_toStartOf="@id/gc2"
+            app:layout_constraintTop_toTopOf="@id/gr0"
+            app:layout_constraintBottom_toTopOf="@id/gr1" />
+
+        <Button
+            android:text="BS"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc2"
+            app:layout_constraintEnd_toStartOf="@id/gc3"
+            app:layout_constraintTop_toTopOf="@id/gr0"
+            app:layout_constraintBottom_toTopOf="@id/gr1" />
+
+        <Button
+            android:text="/"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc3"
+            app:layout_constraintEnd_toStartOf="@id/gc4"
+            app:layout_constraintTop_toTopOf="@id/gr0"
+            app:layout_constraintBottom_toTopOf="@id/gr1" />
+
+        <!-- ===== HÀNG 2 ===== -->
+        <Button
+            android:text="7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc0"
+            app:layout_constraintEnd_toStartOf="@id/gc1"
+            app:layout_constraintTop_toTopOf="@id/gr1"
+            app:layout_constraintBottom_toTopOf="@id/gr2" />
+
+        <Button
+            android:text="8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc1"
+            app:layout_constraintEnd_toStartOf="@id/gc2"
+            app:layout_constraintTop_toTopOf="@id/gr1"
+            app:layout_constraintBottom_toTopOf="@id/gr2" />
+
+        <Button
+            android:text="9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc2"
+            app:layout_constraintEnd_toStartOf="@id/gc3"
+            app:layout_constraintTop_toTopOf="@id/gr1"
+            app:layout_constraintBottom_toTopOf="@id/gr2" />
+
+        <Button
+            android:text="x"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc3"
+            app:layout_constraintEnd_toStartOf="@id/gc4"
+            app:layout_constraintTop_toTopOf="@id/gr1"
+            app:layout_constraintBottom_toTopOf="@id/gr2" />
+
+        <!-- ===== HÀNG 3 ===== -->
+        <Button
+            android:text="4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc0"
+            app:layout_constraintEnd_toStartOf="@id/gc1"
+            app:layout_constraintTop_toTopOf="@id/gr2"
+            app:layout_constraintBottom_toTopOf="@id/gr3" />
+
+        <Button
+            android:text="5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc1"
+            app:layout_constraintEnd_toStartOf="@id/gc2"
+            app:layout_constraintTop_toTopOf="@id/gr2"
+            app:layout_constraintBottom_toTopOf="@id/gr3" />
+
+        <Button
+            android:text="6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc2"
+            app:layout_constraintEnd_toStartOf="@id/gc3"
+            app:layout_constraintTop_toTopOf="@id/gr2"
+            app:layout_constraintBottom_toTopOf="@id/gr3" />
+
+        <Button
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc3"
+            app:layout_constraintEnd_toStartOf="@id/gc4"
+            app:layout_constraintTop_toTopOf="@id/gr2"
+            app:layout_constraintBottom_toTopOf="@id/gr3" />
+
+        <!-- ===== HÀNG 4 ===== -->
+        <Button
+            android:text="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc0"
+            app:layout_constraintEnd_toStartOf="@id/gc1"
+            app:layout_constraintTop_toTopOf="@id/gr3"
+            app:layout_constraintBottom_toTopOf="@id/gr4" />
+
+        <Button
+            android:text="2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc1"
+            app:layout_constraintEnd_toStartOf="@id/gc2"
+            app:layout_constraintTop_toTopOf="@id/gr3"
+            app:layout_constraintBottom_toTopOf="@id/gr4" />
+
+        <Button
+            android:text="3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc2"
+            app:layout_constraintEnd_toStartOf="@id/gc3"
+            app:layout_constraintTop_toTopOf="@id/gr3"
+            app:layout_constraintBottom_toTopOf="@id/gr4" />
+
+        <Button
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc3"
+            app:layout_constraintEnd_toStartOf="@id/gc4"
+            app:layout_constraintTop_toTopOf="@id/gr3"
+            app:layout_constraintBottom_toTopOf="@id/gr4" />
+
+        <!-- ===== HÀNG 5 ===== -->
+        <Button
+            android:text="+/-"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc0"
+            app:layout_constraintEnd_toStartOf="@id/gc1"
+            app:layout_constraintTop_toTopOf="@id/gr4"
+            app:layout_constraintBottom_toTopOf="@id/gr5" />
+
+        <Button
+            android:text="0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="#EEEEEE"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="@id/gc1"
+            app:layout_constraintEnd_toStartOf="@id/gc2"
+            app:layout_constraintTop_toTopOf="@id/gr4"
+            app:layout_constraintBottom_toTopOf="@id/gr5" />
+
+        <Button
+            android:text="."
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:ba
