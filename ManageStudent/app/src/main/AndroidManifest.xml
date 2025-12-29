@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".StudentApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,16 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".AddStudentActivity"
-            android:label="Thêm Sinh Viên"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StudentDetailActivity"
-            android:label="Chi Tiết Sinh Viên"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
