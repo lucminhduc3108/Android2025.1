@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/create_folder"
+        android:title="@string/create_folder"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/create_file"
+        android:title="@string/create_file"
+        app:showAsAction="ifRoom" />
+</menu>

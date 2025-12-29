@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">FileManagement</string>
+    <string name="file_icon">File icon</string>
+    <string name="rename">Đổi tên</string>
+    <string name="delete">Xóa</string>
+    <string name="copy">Sao chép</string>
+    <string name="create_folder">Tạo thư mục</string>
+    <string name="create_file">Tạo file</string>
+    <string name="folder_name">Tên thư mục</string>
+    <string name="file_name">Tên file</string>
+    <string name="confirm_delete">Xác nhận xóa</string>
+    <string name="delete_message">Bạn có chắc chắn muốn xóa?</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+    <string name="select_destination">Chọn thư mục đích</string>
+    <string name="enter_name">Nhập tên</string>
+    <string name="cancel">Hủy</string>
+    <string name="ok">OK</string>
+    <string name="bytes">bytes</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="menu">Menu</string>
+</resources>
